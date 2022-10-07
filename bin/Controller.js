@@ -29,7 +29,7 @@ class Controller{
     setCategoria(categoria, res) {
            Categoria.create(categoria, function(err, newCategoria){
             if(err) throw err;
-            res.send({status: 200, nU: "Categirua creada con exito ..."});
+            res.send({status: 200, nU: "Categoría creada con exito ..."});
         });
     }
 
