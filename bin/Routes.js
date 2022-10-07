@@ -14,6 +14,11 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
+app.get("/", function(req, res){
+    
+    res.send("hola");
+});
+
 app.post("/categorias", auth, function(req, res){
     var data = req.body;
     console.log(data)
