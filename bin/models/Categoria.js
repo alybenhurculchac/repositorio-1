@@ -7,7 +7,14 @@ const CategoriaSchema = new Schema({
     descripcion : String,
     color : String,
     urlImagen : String,
-    recursos : [],
+    recursos : [
+    {
+        nombre : {type : String, required : true, unique : false},
+        descripcion : {type : String, required : true, unique : false},
+        urlrecurso : {type : String, required : true, unique : false},
+        urlimagen : {type : String, required : true, unique : false},
+        color : {type : String, required : true, unique : false},
+    }],
     createdAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now}
 });
