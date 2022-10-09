@@ -161,6 +161,21 @@ async setChangepassword(data, res){
         if(err) throw err;
     });
 }
+	
+deleteRecurso(data, res) {
+    var {idc, idr } = data;
+    
+    Categoria.findOneAndDelete(
+        {"_id": idc, "._id": idr},
+        function (error, doc) {
+            if (error) {
+                res.send({status: 400, nU: "Se produjo um error... "});
+            } else {
+                res.send({status: 200, nU: "Registro borrado ..."});
+            }
+        }
+    )
+}
  
 }
 
