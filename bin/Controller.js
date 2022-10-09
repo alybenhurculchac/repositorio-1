@@ -166,7 +166,7 @@ deleteRecurso(data, res) {
     var {idc, idr } = data;
     
     Categoria.findOneAndDelete(
-        {"_id": idc, "._id": idr},
+        {"_id": idc, "_id": idr},
         function (error, doc) {
             if (error) {
                 res.send({status: 400, nU: "Se produjo um error... "});
