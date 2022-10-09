@@ -63,4 +63,9 @@ app.post("/BuscaRecursoNombre", function(req, res){
    Controller.getRecursoNombre(data, res);
 });
 
+app.post("/deleteRecurso", function(req, res){
+   var data = req.body;
+   Controller.deleteRecurso(data, res);
+});
+
 exports.app = app;
