@@ -164,7 +164,7 @@ async setChangepassword(data, res){
 	
 deleteRecurso(data, res) {
     var {idc, idr } = data;
-    
+    console.log(data)
     Categoria.findOneAndDelete(
         {"_id": idc, "_id": idr},
         function (error, doc) {
