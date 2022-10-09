@@ -162,11 +162,14 @@ async setChangepassword(data, res){
     });
 }
 	
+	
 deleteRecurso(data, res) {
     var {idc, idr } = data;
     console.log(data)
-    Categoria.findOneAndDelete(
-        {"_id": idc, "_id": idr},
+    Categoria.findOneAndUpdate(
+        {"_id": idc},
+	{ $pull: { recursos: { _id: idr} } },    
+	{ new: true },   
         function (error, doc) {
             if (error) {
                 res.send({status: 400, nU: "Se produjo um error... "});
